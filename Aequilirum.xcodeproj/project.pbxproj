@@ -15,6 +15,9 @@
 		225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */; };
 		225A4EA01EA5F6AE002CBFE4 /* TransformationCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */; };
 		225A4EA11EA5F6B1002CBFE4 /* CastleCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */; };
+		225A4EDE1EA694C4002CBFE4 /* Transformer_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4EDD1EA694C4002CBFE4 /* Transformer_test.swift */; };
+		225A4EE11EA6993F002CBFE4 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4EDB1EA693AB002CBFE4 /* Transformer.swift */; };
+		225A4EE21EA69940002CBFE4 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4EDB1EA693AB002CBFE4 /* Transformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +42,8 @@
 		225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformationCompany.swift; sourceTree = "<group>"; };
 		225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleCompany_test.swift; sourceTree = "<group>"; };
 		225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformationCompany_test.swift; sourceTree = "<group>"; };
+		225A4EDB1EA693AB002CBFE4 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		225A4EDD1EA694C4002CBFE4 /* Transformer_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer_test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 				225A4E851EA5ED90002CBFE4 /* main.swift */,
 				225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */,
 				225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */,
+				225A4EDB1EA693AB002CBFE4 /* Transformer.swift */,
 			);
 			path = Aequilirum;
 			sourceTree = "<group>";
@@ -94,6 +100,7 @@
 				225A4E941EA5ED9E002CBFE4 /* Info.plist */,
 				225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */,
 				225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */,
+				225A4EDD1EA694C4002CBFE4 /* Transformer_test.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225A4EE21EA69940002CBFE4 /* Transformer.swift in Sources */,
 				225A4E861EA5ED90002CBFE4 /* main.swift in Sources */,
 				225A4E9B1EA5EFA8002CBFE4 /* TransformationCompany.swift in Sources */,
 				225A4E991EA5EF98002CBFE4 /* CastleCompany.swift in Sources */,
@@ -201,6 +209,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				225A4EA01EA5F6AE002CBFE4 /* TransformationCompany.swift in Sources */,
+				225A4EDE1EA694C4002CBFE4 /* Transformer_test.swift in Sources */,
+				225A4EE11EA6993F002CBFE4 /* Transformer.swift in Sources */,
 				225A4E931EA5ED9E002CBFE4 /* Tests.swift in Sources */,
 				225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */,
 				225A4EA11EA5F6B1002CBFE4 /* CastleCompany.swift in Sources */,
