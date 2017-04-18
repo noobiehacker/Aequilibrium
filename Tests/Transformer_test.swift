@@ -22,7 +22,7 @@ class Transformer_test: XCTestCase {
     }
     
     func testComputerOverAllRating(){
-        var mach = Transformer.init();
+        var mach = Transformer.init(name: "TestRobot");
         mach.strength = 3;
         mach.intelligence = 3;
         mach.speed = 3;

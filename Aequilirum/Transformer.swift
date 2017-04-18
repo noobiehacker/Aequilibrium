@@ -10,10 +10,10 @@ import Foundation
 
 class Transformer{
     
-    init(){
-        
+    init(name : String){
+        self.name = name;
     }
-    
+    var name = "";
     var strength = 0;
     var intelligence = 0;
     var speed = 0;
@@ -32,4 +32,5 @@ class Transformer{
     func computerOverAllRating() -> Int{
         return self.speed + self.strength + self.endurance + self.firepower + self.intelligence;
     }
+    
 }

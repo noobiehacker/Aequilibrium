@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		225A4E861EA5ED90002CBFE4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E851EA5ED90002CBFE4 /* main.swift */; };
-		225A4E931EA5ED9E002CBFE4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E921EA5ED9E002CBFE4 /* Tests.swift */; };
 		225A4E991EA5EF98002CBFE4 /* CastleCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */; };
 		225A4E9B1EA5EFA8002CBFE4 /* TransformationCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */; };
 		225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */; };
@@ -36,7 +35,6 @@
 		225A4E821EA5ED90002CBFE4 /* Aequilirum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Aequilirum; sourceTree = BUILT_PRODUCTS_DIR; };
 		225A4E851EA5ED90002CBFE4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		225A4E901EA5ED9E002CBFE4 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		225A4E921EA5ED9E002CBFE4 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		225A4E941EA5ED9E002CBFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleCompany.swift; sourceTree = "<group>"; };
 		225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformationCompany.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		225A4E911EA5ED9E002CBFE4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				225A4E921EA5ED9E002CBFE4 /* Tests.swift */,
 				225A4E941EA5ED9E002CBFE4 /* Info.plist */,
 				225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */,
 				225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */,
@@ -211,7 +208,6 @@
 				225A4EA01EA5F6AE002CBFE4 /* TransformationCompany.swift in Sources */,
 				225A4EDE1EA694C4002CBFE4 /* Transformer_test.swift in Sources */,
 				225A4EE11EA6993F002CBFE4 /* Transformer.swift in Sources */,
-				225A4E931EA5ED9E002CBFE4 /* Tests.swift in Sources */,
 				225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */,
 				225A4EA11EA5F6B1002CBFE4 /* CastleCompany.swift in Sources */,
 				225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */,
