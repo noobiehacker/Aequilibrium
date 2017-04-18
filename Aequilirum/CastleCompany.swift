@@ -21,7 +21,9 @@ class CastleCompany{
     }
     
     func computePeaks(land : [Int]) -> Int{
-        var count = 0;
+        
+        //Assuming we can always build a castle at the start of array
+        var count = 1;
         //1)Loop through array
         for index in 0...land.count{
             if(index + 2 < land.count){
@@ -39,7 +41,7 @@ class CastleCompany{
     }
     
     func computeValleys(land : [Int]) -> Int{
-        var count = 0;
+        var count = 1;
         //1)Loop through array
         for index in 0...land.count{
             if(index + 2 < land.count){
