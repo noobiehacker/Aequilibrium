@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		225A4E861EA5ED90002CBFE4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E851EA5ED90002CBFE4 /* main.swift */; };
+		225A4E931EA5ED9E002CBFE4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E921EA5ED9E002CBFE4 /* Tests.swift */; };
+		225A4E991EA5EF98002CBFE4 /* CastleCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */; };
+		225A4E9B1EA5EFA8002CBFE4 /* TransformationCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */; };
+		225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */; };
+		225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +30,24 @@
 /* Begin PBXFileReference section */
 		225A4E821EA5ED90002CBFE4 /* Aequilirum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Aequilirum; sourceTree = BUILT_PRODUCTS_DIR; };
 		225A4E851EA5ED90002CBFE4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		225A4E901EA5ED9E002CBFE4 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		225A4E921EA5ED9E002CBFE4 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		225A4E941EA5ED9E002CBFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleCompany.swift; sourceTree = "<group>"; };
+		225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformationCompany.swift; sourceTree = "<group>"; };
+		225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleCompany_test.swift; sourceTree = "<group>"; };
+		225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformationCompany_test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		225A4E7F1EA5ED90002CBFE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225A4E8D1EA5ED9E002CBFE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				225A4E841EA5ED90002CBFE4 /* Aequilirum */,
+				225A4E911EA5ED9E002CBFE4 /* Tests */,
 				225A4E831EA5ED90002CBFE4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				225A4E821EA5ED90002CBFE4 /* Aequilirum */,
+				225A4E901EA5ED9E002CBFE4 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +79,21 @@
 			isa = PBXGroup;
 			children = (
 				225A4E851EA5ED90002CBFE4 /* main.swift */,
+				225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */,
+				225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */,
 			);
 			path = Aequilirum;
+			sourceTree = "<group>";
+		};
+		225A4E911EA5ED9E002CBFE4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				225A4E921EA5ED9E002CBFE4 /* Tests.swift */,
+				225A4E941EA5ED9E002CBFE4 /* Info.plist */,
+				225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */,
+				225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +116,23 @@
 			productReference = 225A4E821EA5ED90002CBFE4 /* Aequilirum */;
 			productType = "com.apple.product-type.tool";
 		};
+		225A4E8F1EA5ED9E002CBFE4 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225A4E951EA5ED9E002CBFE4 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				225A4E8C1EA5ED9E002CBFE4 /* Sources */,
+				225A4E8D1EA5ED9E002CBFE4 /* Frameworks */,
+				225A4E8E1EA5ED9E002CBFE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 225A4E901EA5ED9E002CBFE4 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +144,11 @@
 				ORGANIZATIONNAME = "David Kwok Ho Chan";
 				TargetAttributes = {
 					225A4E811EA5ED90002CBFE4 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = J9T57DG7T3;
+						ProvisioningStyle = Automatic;
+					};
+					225A4E8F1EA5ED9E002CBFE4 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = J9T57DG7T3;
 						ProvisioningStyle = Automatic;
@@ -112,9 +168,20 @@
 			projectRoot = "";
 			targets = (
 				225A4E811EA5ED90002CBFE4 /* Aequilirum */,
+				225A4E8F1EA5ED9E002CBFE4 /* Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		225A4E8E1EA5ED9E002CBFE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		225A4E7E1EA5ED90002CBFE4 /* Sources */ = {
@@ -122,6 +189,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				225A4E861EA5ED90002CBFE4 /* main.swift in Sources */,
+				225A4E9B1EA5EFA8002CBFE4 /* TransformationCompany.swift in Sources */,
+				225A4E991EA5EF98002CBFE4 /* CastleCompany.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		225A4E8C1EA5ED9E002CBFE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225A4E931EA5ED9E002CBFE4 /* Tests.swift in Sources */,
+				225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */,
+				225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +315,34 @@
 			};
 			name = Release;
 		};
+		225A4E961EA5ED9E002CBFE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = J9T57DG7T3;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.geniemedialabs.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		225A4E971EA5ED9E002CBFE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = J9T57DG7T3;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.geniemedialabs.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -253,6 +360,14 @@
 			buildConfigurations = (
 				225A4E8A1EA5ED90002CBFE4 /* Debug */,
 				225A4E8B1EA5ED90002CBFE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		225A4E951EA5ED9E002CBFE4 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225A4E961EA5ED9E002CBFE4 /* Debug */,
+				225A4E971EA5ED9E002CBFE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

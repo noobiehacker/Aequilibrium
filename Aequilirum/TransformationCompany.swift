@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  TransformationCompany.swift
 //  Aequilirum
 //
 //  Created by David Kwok Ho Chan on 4/17/17.
@@ -7,6 +7,3 @@
 //
 
 import Foundation
-
-print("Hello, World!")
-print("This is the beginning of test son")
