@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Aequilirum
 
 class CastleCompany_test: XCTestCase {
     
@@ -20,16 +21,14 @@ class CastleCompany_test: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testNumberOfCastle() {
+        let company = CastleCompany.init();
+        let array : [Int] = [1 ,2, 3 , 2 ,1 ,2 ,3 , 2];
+        let expected = 3;
+        let result = company.numberOfCastle(land: array);
+        XCTAssertEqual(expected, result);
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }

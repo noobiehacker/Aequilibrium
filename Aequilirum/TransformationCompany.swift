@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class TransformationCompany{
+    
+    init(){
+        
+    }
+    
+    func computeOutput(){
+        print("The output is the following")
+    }
+}

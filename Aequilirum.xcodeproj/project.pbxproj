@@ -13,6 +13,8 @@
 		225A4E9B1EA5EFA8002CBFE4 /* TransformationCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */; };
 		225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */; };
 		225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */; };
+		225A4EA01EA5F6AE002CBFE4 /* TransformationCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */; };
+		225A4EA11EA5F6B1002CBFE4 /* CastleCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,8 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				225A4E851EA5ED90002CBFE4 /* main.swift */,
-				225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */,
 				225A4E9A1EA5EFA8002CBFE4 /* TransformationCompany.swift */,
+				225A4E981EA5EF98002CBFE4 /* CastleCompany.swift */,
 			);
 			path = Aequilirum;
 			sourceTree = "<group>";
@@ -198,8 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225A4EA01EA5F6AE002CBFE4 /* TransformationCompany.swift in Sources */,
 				225A4E931EA5ED9E002CBFE4 /* Tests.swift in Sources */,
 				225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */,
+				225A4EA11EA5F6B1002CBFE4 /* CastleCompany.swift in Sources */,
 				225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +366,7 @@
 				225A4E8B1EA5ED90002CBFE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		225A4E951EA5ED9E002CBFE4 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +375,7 @@
 				225A4E971EA5ED9E002CBFE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
