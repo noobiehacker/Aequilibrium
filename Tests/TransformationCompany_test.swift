@@ -81,33 +81,74 @@ class TransformationCompany_test: XCTestCase {
     
     func testComputeNumberOfBattles() {
         
-        var robots = generateRobots();
+        var robots = generateRobots(name1 : "ADA" ,name2: "Bobby", name3: "Candy");
         var company = TransformationCompany.init();
         let result = company.computeNumberOfBattles(robots: robots);
-        let expectedBattles = 2;
+        let expectedBattles = 1;
+        let expectedAutobotWins = 0;
+        let expectedDecepticonWins = 1;
         XCTAssertEqual(result.battleCounts, expectedBattles)
+        XCTAssertEqual(result.autoBotVictories, expectedAutobotWins)
+        XCTAssertEqual(result.decepticonVictories, expectedDecepticonWins)
+        
     }
     
-    func generateRobots() -> [Transformer] {
+    func testComputeNumberOfBattlesWithPrimes(){
+    
+        var robots = generateRobots(name1: "Optimus Prime", name2: "Predaking", name3: "Optimus Prime");
+        var company = TransformationCompany.init();
+        let result = company.computeNumberOfBattles(robots: robots);
+        XCTAssertEqual(result.worldEnd, true)
+        
+    }
+    
+    func testComputeNumberOfBattlesWithTies(){
+        
+        var robots = generateOtherRobots(name1: "Bumble", name2: "Rat");
+        var company = TransformationCompany.init();
+        let result = company.computeNumberOfBattles(robots: robots);
+        XCTAssertEqual(result.worldEnd, false)
+        XCTAssertEqual(result.autoBotVictories, result.decepticonVictories)
+        
+    }
+    
+    func generateRobots(name1 : String , name2 : String , name3 : String) -> [Transformer] {
         var robots : [Transformer] = [];
-        let robotOne = Transformer.init(name: "Ada");
+        let robotOne = Transformer.init(name: name1);
         robotOne.courage = 1 ;
-        robotOne.skill = 2 ;
-        robotOne.firepower = 3 ;
+        robotOne.skill = 1 ;
+        robotOne.firepower = 2 ;
         robotOne.machineType = Transformer.type.Autobot;
         robots.append(robotOne);
-        let robotTwo = Transformer.init(name: "Bobby")
+        let robotTwo = Transformer.init(name: name2)
         robotTwo.courage = 3 ;
         robotTwo.skill = 1 ;
         robotTwo.firepower = 6 ;
         robotTwo.machineType = Transformer.type.Deception;
         robots.append(robotTwo);
-        let robotThree = Transformer.init(name: "Candy")
+        let robotThree = Transformer.init(name: name3)
         robotThree.courage = 2 ;
         robotThree.skill = 2 ;
         robotThree.firepower = 3 ;
         robotThree.machineType = Transformer.type.Autobot;
         robots.append(robotThree);
+        return robots;
+    }
+    
+    func generateOtherRobots(name1 : String , name2 : String) -> [Transformer]{
+        var robots : [Transformer] = [];
+        let robotOne = Transformer.init(name: name1);
+        robotOne.courage = 1 ;
+        robotOne.skill = 1 ;
+        robotOne.firepower = 1 ;
+        robotOne.machineType = Transformer.type.Autobot;
+        robots.append(robotOne);
+        let robotTwo = Transformer.init(name: name2)
+        robotTwo.courage = 1 ;
+        robotTwo.skill = 1 ;
+        robotTwo.firepower = 1 ;
+        robotTwo.machineType = Transformer.type.Deception;
+        robots.append(robotTwo);
         return robots;
     }
     

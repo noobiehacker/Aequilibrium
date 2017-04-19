@@ -21,14 +21,27 @@ class CastleCompany_test: XCTestCase {
         super.tearDown()
     }
     
-    func testNumberOfCastle() {
+    func testNumberOfCastleOne() {
         let company = CastleCompany.init();
-        let array : [Int] = [1 ,2, 3 , 2 ,1 ,2 ,3 , 2];
-        let expected = 3;
+        let array : [Int] = [1];
+        let expected = 1;
         let result = company.numberOfCastle(land: array);
         XCTAssertEqual(expected, result);
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testNumberOfCastleTwo() {
+        let company = CastleCompany.init();
+        let array : [Int] = [1 ,2, 3 , 2 ,1 ,2 ,3 , 2];
+        let expected = 4;
+        let result = company.numberOfCastle(land: array);
+        XCTAssertEqual(expected, result);
+    }
+    
+    func testNumberOfCastleThree() {
+        let company = CastleCompany.init();
+        let array : [Int] = [1 , 2 , 1 , 2 , 1];
+        let expected = 4;
+        let result = company.numberOfCastle(land: array);
+        XCTAssertEqual(expected, result);
+    }
 }

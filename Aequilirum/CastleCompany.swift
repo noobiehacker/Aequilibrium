@@ -16,14 +16,14 @@ class CastleCompany{
     
     //Return number of castles
     func numberOfCastle(land : [Int]) -> Int{
+        
         //Number of castles is equal to number of peaks & valleys
-        return computePeaks(land: land)+computeValleys(land: land);
+        //Assuming we can always build a castle at the start of array
+        return 1 + computePeaks(land: land)+computeValleys(land: land);
     }
     
     func computePeaks(land : [Int]) -> Int{
-        
-        //Assuming we can always build a castle at the start of array
-        var count = 1;
+        var count = 0;
         //1)Loop through array
         for index in 0...land.count{
             if(index + 2 < land.count){
@@ -33,6 +33,7 @@ class CastleCompany{
                 let secondDiff = land[index + 2] - land[index + 1];
                 if(firstDiff > 0 && secondDiff < 0){
                     count += 1;
+                    print("peak")
                 }
             }
         }
@@ -41,7 +42,7 @@ class CastleCompany{
     }
     
     func computeValleys(land : [Int]) -> Int{
-        var count = 1;
+        var count = 0;
         //1)Loop through array
         for index in 0...land.count{
             if(index + 2 < land.count){
@@ -51,6 +52,7 @@ class CastleCompany{
                 let secondDiff = land[index + 2] - land[index + 1];
                 if(firstDiff < 0 && secondDiff > 0){
                     count += 1;
+                    print("valley")
                 }
             }
         }

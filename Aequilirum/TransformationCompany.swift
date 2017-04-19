@@ -27,27 +27,29 @@ class TransformationCompany{
             //3i)Call determineWinner function one by one, and increment score for battleCount for each function call(Also keep an elimination count for how many autobots/decepticons are elimated
             let autobot = autobots.popLast();
             let decepticon = decepticons.popLast();
-            let result = determineWinner(robotA: autobot!, robotB: decepticon!)
+            var result : Transformer?
+            if(endOfWorld(robotA: autobot!, robotB: decepticon!)){
+                return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: true)
+            }else{
+                result = determineWinner(robotA: autobot!, robotB: decepticon!)
+            }
             battleCounts += 1;
-            
             //3ii)Determine what to do with result
             if result == nil{
-                return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, exception: false)
+                autoBotVictories += 1;
+                decepticonVictories += 1;
             }else if(result?.machineType == Transformer.type.Autobot){
                 autoBotVictories += 1;
             }else if(result?.machineType == Transformer.type.Deception){
                 decepticonVictories += 1;
             }
-            
         }
         //4)Return Number of Battles Count
-        return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, exception: false)
+        return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: false)
     }
 
     func determineWinner(robotA : Transformer, robotB : Transformer) -> Transformer?{
-        if(endOfWorld(robotA: robotA, robotB: robotB)){
-            return robotA;
-        }else if(isOptimusPrime(robot: robotB) || isPredaking(robot: robotB)){
+        if(isOptimusPrime(robot: robotB) || isPredaking(robot: robotB)){
             return robotB;
         }else if(isOptimusPrime(robot: robotA) || isPredaking(robot: robotA)){
             return robotA;

@@ -13,6 +13,6 @@ struct BattleResult{
     var battleCounts = 0;
     var autoBotVictories = 0;
     var decepticonVictories = 0;
-    var exception = false;
+    var worldEnd = false;
     
 }
