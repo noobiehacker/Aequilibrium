@@ -17,21 +17,41 @@ class BattleResult{
     var winningTeam : [Transformer]?
     var losingTeam : [Transformer]?
     
-    //Add Init to fix constructor
+    init(battleCounts : Int , autoBotVictories : Int , decepticonVictories: Int, worldEnd: Bool, winningTeam : [Transformer]?, losingTeam : [Transformer]?){
+        self.battleCounts = battleCounts;
+        self.autoBotVictories = autoBotVictories;
+        self.decepticonVictories = decepticonVictories;
+        self.worldEnd = worldEnd;
+        self.winningTeam = winningTeam;
+        self.losingTeam = losingTeam;
+    }
     
+    //Add Init to fix constructor
     func displayResult(){
         
-        print(String(battleCounts) + " battle");
-        print("Winning team " + displayWinningTeam());
-        print("Survivors from the losing team " + displayLosingTeam());
+        print(generateLosingTeamMessage());
         
     }
     
-    func displayWinningTeam() -> String{
+    func generateResultMessage() -> String{
+        
+        if worldEnd{
+            return "The game immediately ends with all competitors destroyed"
+        }else{
+            var result = String(battleCounts) + " battle" + "/n";
+            result.append(generateWinningTeamMessage()+"/n");
+            result.append(generateLosingTeamMessage()+"/n");
+            return result;
+        }
+        
+    }
+    
+    func generateWinningTeamMessage() -> String{
         let lastRobot = winningTeam?.popLast()
-        var result = ""
-        result.append(String(describing: lastRobot?.machineType))
-        result.append(" ")
+        var result = "Winning team "
+        result.append("(")
+        result.append((lastRobot?.getRobotTeamName())!)
+        result.append("): ")
         result.append((lastRobot?.name)!)
         for robot in winningTeam! {
             result.append(" ")
@@ -40,13 +60,14 @@ class BattleResult{
         return result
     }
     
-    func displayLosingTeam() -> String{
+    func generateLosingTeamMessage() -> String{
         let lastRobot = losingTeam?.popLast()
-        var result = ""
-        result.append(String(describing: lastRobot?.machineType))
-        result.append(" ")
+        var result = "Survivors from the losing team "
+        result.append("(")
+        result.append((lastRobot?.getRobotTeamName())!)
+        result.append("): ")
         result.append((lastRobot?.name)!)
-        for robot in winningTeam! {
+        for robot in losingTeam! {
             result.append(" ")
             result.append(robot.name)
         }

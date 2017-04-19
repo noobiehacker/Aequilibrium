@@ -112,6 +112,8 @@ class TransformationCompany_test: XCTestCase {
         
     }
     
+    //HELPERS
+    
     func generateRobots(name1 : String , name2 : String , name3 : String) -> [Transformer] {
         var robots : [Transformer] = [];
         let robotOne = Transformer.init(name: name1);
@@ -124,7 +126,7 @@ class TransformationCompany_test: XCTestCase {
         robotTwo.courage = 3 ;
         robotTwo.skill = 1 ;
         robotTwo.firepower = 6 ;
-        robotTwo.machineType = Transformer.type.Deception;
+        robotTwo.machineType = Transformer.type.Decepticon;
         robots.append(robotTwo);
         let robotThree = Transformer.init(name: name3)
         robotThree.courage = 2 ;
@@ -147,7 +149,7 @@ class TransformationCompany_test: XCTestCase {
         robotTwo.courage = 1 ;
         robotTwo.skill = 1 ;
         robotTwo.firepower = 1 ;
-        robotTwo.machineType = Transformer.type.Deception;
+        robotTwo.machineType = Transformer.type.Decepticon;
         robots.append(robotTwo);
         return robots;
     }

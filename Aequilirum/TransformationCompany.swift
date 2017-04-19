@@ -19,7 +19,7 @@ class TransformationCompany{
         robots.sorted{ $0.rank < $1.rank }
         //2)Split into Autobots and Decepticons
         var autobots = robots.filter({$0.machineType == Transformer.type.Autobot});
-        var decepticons = robots.filter({$0.machineType == Transformer.type.Deception});
+        var decepticons = robots.filter({$0.machineType == Transformer.type.Decepticon});
         //3)Write a while loop, and we exit the loop when we have no more autobots or decepticons'
         var autoBotVictories = 0;
         var decepticonVictories = 0;
@@ -40,7 +40,7 @@ class TransformationCompany{
                 decepticonVictories += 1;
             }else if(result?.machineType == Transformer.type.Autobot){
                 autoBotVictories += 1;
-            }else if(result?.machineType == Transformer.type.Deception){
+            }else if(result?.machineType == Transformer.type.Decepticon){
                 decepticonVictories += 1;
             }
         }

@@ -19,6 +19,7 @@
 		225A4EE21EA69940002CBFE4 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4EDB1EA693AB002CBFE4 /* Transformer.swift */; };
 		2290CEC51EA6DBA500D6A763 /* BattleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4EE31EA6D553002CBFE4 /* BattleResult.swift */; };
 		2290CEC61EA6DBA600D6A763 /* BattleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A4EE31EA6D553002CBFE4 /* BattleResult.swift */; };
+		2290CEC81EA8075E00D6A763 /* BattleResult_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290CEC71EA8075E00D6A763 /* BattleResult_test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		225A4EDB1EA693AB002CBFE4 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		225A4EDD1EA694C4002CBFE4 /* Transformer_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer_test.swift; sourceTree = "<group>"; };
 		225A4EE31EA6D553002CBFE4 /* BattleResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleResult.swift; sourceTree = "<group>"; };
+		2290CEC71EA8075E00D6A763 /* BattleResult_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleResult_test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				225A4E9C1EA5EFB3002CBFE4 /* CastleCompany_test.swift */,
 				225A4E9E1EA5EFC8002CBFE4 /* TransformationCompany_test.swift */,
 				225A4EDD1EA694C4002CBFE4 /* Transformer_test.swift */,
+				2290CEC71EA8075E00D6A763 /* BattleResult_test.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				225A4EDE1EA694C4002CBFE4 /* Transformer_test.swift in Sources */,
 				225A4EE11EA6993F002CBFE4 /* Transformer.swift in Sources */,
 				225A4E9F1EA5EFC8002CBFE4 /* TransformationCompany_test.swift in Sources */,
+				2290CEC81EA8075E00D6A763 /* BattleResult_test.swift in Sources */,
 				2290CEC51EA6DBA500D6A763 /* BattleResult.swift in Sources */,
 				225A4EA11EA5F6B1002CBFE4 /* CastleCompany.swift in Sources */,
 				225A4E9D1EA5EFB3002CBFE4 /* CastleCompany_test.swift in Sources */,

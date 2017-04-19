@@ -21,7 +21,7 @@ class Transformer_test: XCTestCase {
         super.tearDown()
     }
     
-    func testComputerOverAllRating(){
+    func testComputeOverAllRating(){
         var mach = Transformer.init(name: "TestRobot");
         mach.strength = 3;
         mach.intelligence = 3;

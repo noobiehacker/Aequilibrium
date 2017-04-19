@@ -26,11 +26,21 @@ class Transformer{
     
     enum type {
         case Autobot
-        case Deception
+        case Decepticon
     }
     
     func computerOverAllRating() -> Int{
         return self.speed + self.strength + self.endurance + self.firepower + self.intelligence;
+    }
+    
+    func getRobotTeamName() -> String{
+        if self.machineType == type.Autobot{
+            return "Autobot"
+        }else if self.machineType == type.Decepticon{
+            return "Decepticon"
+        }else{
+            return "Random Alien"
+        }
     }
     
 }
