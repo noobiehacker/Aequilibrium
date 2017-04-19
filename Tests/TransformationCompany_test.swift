@@ -83,7 +83,7 @@ class TransformationCompany_test: XCTestCase {
         
         var robots = generateRobots(name1 : "ADA" ,name2: "Bobby", name3: "Candy");
         var company = TransformationCompany.init();
-        let result = company.computeNumberOfBattles(robots: robots);
+        let result = company.computeBattleResult(robots: robots);
         let expectedBattles = 1;
         let expectedAutobotWins = 0;
         let expectedDecepticonWins = 1;
@@ -97,7 +97,7 @@ class TransformationCompany_test: XCTestCase {
     
         var robots = generateRobots(name1: "Optimus Prime", name2: "Predaking", name3: "Optimus Prime");
         var company = TransformationCompany.init();
-        let result = company.computeNumberOfBattles(robots: robots);
+        let result = company.computeBattleResult(robots: robots);
         XCTAssertEqual(result.worldEnd, true)
         
     }
@@ -106,7 +106,7 @@ class TransformationCompany_test: XCTestCase {
         
         var robots = generateOtherRobots(name1: "Bumble", name2: "Rat");
         var company = TransformationCompany.init();
-        let result = company.computeNumberOfBattles(robots: robots);
+        let result = company.computeBattleResult(robots: robots);
         XCTAssertEqual(result.worldEnd, false)
         XCTAssertEqual(result.autoBotVictories, result.decepticonVictories)
         

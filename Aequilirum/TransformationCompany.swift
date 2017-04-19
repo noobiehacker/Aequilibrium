@@ -13,7 +13,7 @@ class TransformationCompany{
     init(){
     }
     
-    func computeNumberOfBattles(robots : [Transformer]) -> BattleResult{
+    func computeBattleResult(robots : [Transformer]) -> BattleResult{
         var battleCounts = 0;
         //1)First Sort Array
         robots.sorted{ $0.rank < $1.rank }
@@ -29,7 +29,7 @@ class TransformationCompany{
             let decepticon = decepticons.popLast();
             var result : Transformer?
             if(endOfWorld(robotA: autobot!, robotB: decepticon!)){
-                return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: true)
+                return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: true, winningTeam : autobots, losingTeam : decepticons)
             }else{
                 result = determineWinner(robotA: autobot!, robotB: decepticon!)
             }
@@ -45,7 +45,7 @@ class TransformationCompany{
             }
         }
         //4)Return Number of Battles Count
-        return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: false)
+        return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: false, winningTeam : autobots, losingTeam : decepticons);
     }
 
     func determineWinner(robotA : Transformer, robotB : Transformer) -> Transformer?{
