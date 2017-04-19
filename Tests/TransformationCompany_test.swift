@@ -79,17 +79,36 @@ class TransformationCompany_test: XCTestCase {
         
     }
     
-    func testComputeOutput() {
-        var robots : [Transformer] = []
+    func testComputeNumberOfBattles() {
         
-        robots.append(Transformer.init(name: "Ada"))
-        robots.append(Transformer.init(name: "Bobby"))
-        robots.append(Transformer.init(name: "Candy"))
-        
+        var robots = generateRobots();
         var company = TransformationCompany.init();
         let result = company.computeNumberOfBattles(robots: robots);
-        let expected = 123;
-        XCTAssertEqual(result, expected)
+        let expectedBattles = 2;
+        XCTAssertEqual(result.battleCounts, expectedBattles)
+    }
+    
+    func generateRobots() -> [Transformer] {
+        var robots : [Transformer] = [];
+        let robotOne = Transformer.init(name: "Ada");
+        robotOne.courage = 1 ;
+        robotOne.skill = 2 ;
+        robotOne.firepower = 3 ;
+        robotOne.machineType = Transformer.type.Autobot;
+        robots.append(robotOne);
+        let robotTwo = Transformer.init(name: "Bobby")
+        robotTwo.courage = 3 ;
+        robotTwo.skill = 1 ;
+        robotTwo.firepower = 6 ;
+        robotTwo.machineType = Transformer.type.Deception;
+        robots.append(robotTwo);
+        let robotThree = Transformer.init(name: "Candy")
+        robotThree.courage = 2 ;
+        robotThree.skill = 2 ;
+        robotThree.firepower = 3 ;
+        robotThree.machineType = Transformer.type.Autobot;
+        robots.append(robotThree);
+        return robots;
     }
     
 }

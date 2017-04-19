@@ -11,17 +11,37 @@ import Foundation
 class TransformationCompany{
     
     init(){
-        
     }
     
-    func computeNumberOfBattles(robots : [Transformer]) -> Int{
+    func computeNumberOfBattles(robots : [Transformer]) -> BattleResult{
         var battleCounts = 0;
         //1)First Sort Array
+        robots.sorted{ $0.rank < $1.rank }
         //2)Split into Autobots and Decepticons
-        //3)Write a while loop, and we exit the loop when we have no more autobots or decepticons
-        //3i)Call determineWinner function one by one, and increment score for battleCount for each function call(Also keep an elimination count for how many autobots/decepticons are elimated
+        var autobots = robots.filter({$0.machineType == Transformer.type.Autobot});
+        var decepticons = robots.filter({$0.machineType == Transformer.type.Deception});
+        //3)Write a while loop, and we exit the loop when we have no more autobots or decepticons'
+        var autoBotVictories = 0;
+        var decepticonVictories = 0;
+        while(autobots.count > 0 && decepticons.count > 0){
+            //3i)Call determineWinner function one by one, and increment score for battleCount for each function call(Also keep an elimination count for how many autobots/decepticons are elimated
+            let autobot = autobots.popLast();
+            let decepticon = decepticons.popLast();
+            let result = determineWinner(robotA: autobot!, robotB: decepticon!)
+            battleCounts += 1;
+            
+            //3ii)Determine what to do with result
+            if result == nil{
+                return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, exception: false)
+            }else if(result?.machineType == Transformer.type.Autobot){
+                autoBotVictories += 1;
+            }else if(result?.machineType == Transformer.type.Deception){
+                decepticonVictories += 1;
+            }
+            
+        }
         //4)Return Number of Battles Count
-        return battleCounts;
+        return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, exception: false)
     }
 
     func determineWinner(robotA : Transformer, robotB : Transformer) -> Transformer?{
