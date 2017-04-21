@@ -79,6 +79,34 @@ class TransformationCompany_test: XCTestCase {
         
     }
     
+    func testDetermineWinnerFromSample() {
+        let company = TransformationCompany.init()
+        //Soundwave,D,8,9,2,6,7,5,6,10
+        let soundWave = Transformer.init(name: "Soundwave")
+        soundWave.machineType = Transformer.type.Decepticon
+        soundWave.strength = 8
+        soundWave.intelligence = 9
+        soundWave.speed = 2
+        soundWave.endurance = 6
+        soundWave.rank = 7
+        soundWave.courage = 5
+        soundWave.firepower = 6
+        soundWave.skill = 10
+        //Bluestreak,A,6,6,7,9,5,2,9,7
+        let blueStreak = Transformer.init(name: "Bluestreak")
+        blueStreak.machineType = Transformer.type.Autobot
+        blueStreak.strength = 6
+        blueStreak.intelligence = 6
+        blueStreak.speed = 7
+        blueStreak.endurance = 9
+        blueStreak.rank = 5
+        blueStreak.courage = 2
+        blueStreak.firepower = 9
+        blueStreak.skill = 7
+        let result = company.determineWinner(robotA: soundWave, robotB: blueStreak)
+        XCTAssertEqual(result?.name, "Soundwave")
+        
+    }
     func testComputeNumberOfBattles() {
         
         var robots = generateRobots(name1 : "ADA" ,name2: "Bobby", name3: "Candy");
@@ -110,6 +138,59 @@ class TransformationCompany_test: XCTestCase {
         XCTAssertEqual(result.worldEnd, false)
         XCTAssertEqual(result.autoBotVictories, result.decepticonVictories)
         
+    }
+    
+    func testComputBattleResultFromSample(){
+        
+        var input = generateSampleRobots()
+        var company = TransformationCompany.init()
+        let result = company.computeBattleResult(robots: input)
+        XCTAssertEqual(result.battleCounts, 1)
+        XCTAssertEqual(result.losingTeam?.count, 1)
+        result.displayResult()
+        
+    }
+    
+    func generateSampleRobots() -> [Transformer] {
+        
+        var result : [Transformer] = []
+        //Soundwave,D,8,9,2,6,7,5,6,10
+        let soundWave = Transformer.init(name: "Soundwave")
+        soundWave.machineType = Transformer.type.Decepticon
+        soundWave.strength = 8
+        soundWave.intelligence = 9
+        soundWave.speed = 2
+        soundWave.endurance = 6
+        soundWave.rank = 7
+        soundWave.courage = 5
+        soundWave.firepower = 6
+        soundWave.skill = 10
+        result.append(soundWave)
+        //Bluestreak,A,6,6,7,9,5,2,9,7
+        let blueStreak = Transformer.init(name: "Bluestreak")
+        blueStreak.machineType = Transformer.type.Autobot
+        blueStreak.strength = 6
+        blueStreak.intelligence = 6
+        blueStreak.speed = 7
+        blueStreak.endurance = 9
+        blueStreak.rank = 5
+        blueStreak.courage = 2
+        blueStreak.firepower = 9
+        blueStreak.skill = 7
+        result.append(blueStreak)
+        //Hubcap,A, 4,4,4,4,4,4,4,4
+        let hubcap = Transformer.init(name: "hubcap")
+        hubcap.machineType = Transformer.type.Autobot
+        hubcap.strength = 4
+        hubcap.intelligence = 4
+        hubcap.speed = 4
+        hubcap.endurance = 4
+        hubcap.rank = 4
+        hubcap.courage = 4
+        hubcap.firepower = 4
+        hubcap.skill = 4
+        result.append(hubcap)
+        return result
     }
     
     //HELPERS

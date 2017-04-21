@@ -29,7 +29,7 @@ class BattleResult{
     //Add Init to fix constructor
     func displayResult(){
         
-        print(generateLosingTeamMessage());
+        print(generateResultMessage());
         
     }
     
@@ -38,40 +38,71 @@ class BattleResult{
         if worldEnd{
             return "The game immediately ends with all competitors destroyed"
         }else{
-            var result = String(battleCounts) + " battle" + "/n";
-            result.append(generateWinningTeamMessage()+"/n");
-            result.append(generateLosingTeamMessage()+"/n");
+            var result = String(battleCounts) + " battle" + "\n";
+            result.append(generateWinningTeamMessage()+"\n");
+            result.append(generateSurvivorTeamMessage()+"\n");
             return result;
         }
         
     }
     
     func generateWinningTeamMessage() -> String{
-        let lastRobot = winningTeam?.popLast()
-        var result = "Winning team "
-        result.append("(")
-        result.append((lastRobot?.getRobotTeamName())!)
-        result.append("): ")
-        result.append((lastRobot?.name)!)
-        for robot in winningTeam! {
-            result.append(" ")
-            result.append(robot.name)
+        if autoBotVictories == decepticonVictories{
+            return "Its A Tie"
+        }else{
+            let lastRobot = winningTeam?.popLast()
+            var result = "Winning team "
+            result.append("(")
+            result.append(getWinningTeamName())
+            result.append("): ")
+            result.append((lastRobot?.name)!)
+            for robot in winningTeam! {
+                result.append(" ")
+                result.append(robot.name)
+            }
+            return result
         }
-        return result
     }
     
-    func generateLosingTeamMessage() -> String{
-        let lastRobot = losingTeam?.popLast()
-        var result = "Survivors from the losing team "
-        result.append("(")
-        result.append((lastRobot?.getRobotTeamName())!)
-        result.append("): ")
-        result.append((lastRobot?.name)!)
-        for robot in losingTeam! {
-            result.append(" ")
-            result.append(robot.name)
+    func generateSurvivorTeamMessage() -> String{
+        if losingTeam?.count == 0{
+            return "No Survivor from the losing team"
+        }else{
+            let lastRobot = losingTeam?.popLast()
+            var result = "Survivors from the losing team "
+            result.append("(")
+            result.append(getLosingTeamName())
+            result.append("): ")
+            result.append((lastRobot?.name)!)
+            for robot in losingTeam! {
+                result.append(" ")
+                result.append(robot.name)
+            }
+            return result
         }
-        return result
     }
     
+    func getWinningTeamName() -> String{
+        if autoBotVictories > decepticonVictories{
+            return "AutoBots"
+        }
+        else if decepticonVictories > autoBotVictories{
+            return "Decepticons"
+        }
+        else{
+            return "Error"
+        }
+    }
+    
+    func getLosingTeamName() -> String{
+        if autoBotVictories > decepticonVictories{
+            return "Decepticons"
+        }
+        else if decepticonVictories > autoBotVictories{
+            return "AutoBots"
+        }
+        else{
+            return "Error"
+        }
+    }
 }

@@ -41,16 +41,16 @@ class BattleResult_test: XCTestCase{
         
         let battleResult = generateBattleResult();
         let result = battleResult.generateWinningTeamMessage();
-        let expected = "Winning team (Autobot): Bumble Bee"
+        let expected = "Winning team (AutoBots): Bumble Bee"
         XCTAssertEqual(result, expected)
         
     }
     
-    func testGenerateLosingMessage(){
+    func testGenerateSurvivorMessage(){
         
         let battleResult = generateBattleResult();
-        let result = battleResult.generateLosingTeamMessage();
-        let expected = "Survivors from the losing team (Autobot): Flying Rat"
+        let result = battleResult.generateSurvivorTeamMessage();
+        let expected = "Survivors from the losing team (Decepticons): Flying Rat"
         XCTAssertEqual(result, expected)
     }
     
@@ -59,7 +59,7 @@ class BattleResult_test: XCTestCase{
     func generateBattleResult() -> BattleResult{
         let winningTeam = [Transformer.init(name: "Bumble Bee")];
         let losingTeam = [Transformer.init(name: "Flying Rat")];
-        let battleResult = BattleResult.init(battleCounts: 1, autoBotVictories: 1, decepticonVictories: 1, worldEnd: false, winningTeam: winningTeam, losingTeam: losingTeam)
+        let battleResult = BattleResult.init(battleCounts: 1, autoBotVictories: 2, decepticonVictories: 1, worldEnd: false, winningTeam: winningTeam, losingTeam: losingTeam)
         return battleResult;
     }
     

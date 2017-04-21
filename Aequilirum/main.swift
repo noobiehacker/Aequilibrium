@@ -13,13 +13,14 @@ let helper = UIHelper.init()
 print("Welcome To The Aequilibrium")
 
 //Write a Command Line Program to read in robots one by one
-helper.addTransformer();
+var transformers :[Transformer] = []
+transformers.append(helper.addTransformer());
 var addTransformer = true
 repeat{
-    print("Do you want to enter more names?(Y/N)")
+    print("Do you want to enter more Transformers?(Y/N)")
     let name2 = readLine()!
     if(name2 == "Y"){
-        helper.addTransformer();
+        transformers.append(helper.addTransformer());
     }else if(name2 == "N"){
         addTransformer = false
     }else{
@@ -29,5 +30,9 @@ repeat{
 while addTransformer
 
 print("Lets Start The Battle")
+
+let company = TransformationCompany.init()
+let result = company.computeBattleResult(robots: transformers)
+result.displayResult()
 
 

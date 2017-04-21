@@ -16,17 +16,19 @@ class TransformationCompany{
     func computeBattleResult(robots : [Transformer]) -> BattleResult{
         var battleCounts = 0;
         //1)First Sort Array
-        robots.sorted{ $0.rank < $1.rank }
+        var sortedRobots = robots.sorted{ $0.rank < $1.rank }
         //2)Split into Autobots and Decepticons
-        var autobots = robots.filter({$0.machineType == Transformer.type.Autobot});
-        var decepticons = robots.filter({$0.machineType == Transformer.type.Decepticon});
+        var autobots = sortedRobots.filter({$0.machineType == Transformer.type.Autobot});
+        var decepticons = sortedRobots.filter({$0.machineType == Transformer.type.Decepticon});
         //3)Write a while loop, and we exit the loop when we have no more autobots or decepticons'
         var autoBotVictories = 0;
         var decepticonVictories = 0;
+        var survivingAutobots : [Transformer] = []
+        var survivingDecepticons : [Transformer] = []
         while(autobots.count > 0 && decepticons.count > 0){
             //3i)Call determineWinner function one by one, and increment score for battleCount for each function call(Also keep an elimination count for how many autobots/decepticons are elimated
-            let autobot = autobots.popLast();
-            let decepticon = decepticons.popLast();
+            let decepticon = decepticons.popLast()
+            let autobot = autobots.popLast()
             var result : Transformer?
             if(endOfWorld(robotA: autobot!, robotB: decepticon!)){
                 return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: true, winningTeam : autobots, losingTeam : decepticons)
@@ -40,12 +42,25 @@ class TransformationCompany{
                 decepticonVictories += 1;
             }else if(result?.machineType == Transformer.type.Autobot){
                 autoBotVictories += 1;
+                survivingAutobots.append(result!)
             }else if(result?.machineType == Transformer.type.Decepticon){
                 decepticonVictories += 1;
+                survivingDecepticons.append(result!)
+            }
+            while(autobots.count > 0){
+                survivingAutobots.append(autobots.popLast()!)
+            }
+            while(decepticons.count > 0){
+                survivingDecepticons.append(decepticons.popLast()!)
             }
         }
         //4)Return Number of Battles Count
-        return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: false, winningTeam : autobots, losingTeam : decepticons);
+        if autoBotVictories > decepticonVictories{
+            return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: false, winningTeam : survivingAutobots, losingTeam : survivingDecepticons);
+        }else{
+            return BattleResult(battleCounts: battleCounts, autoBotVictories: autoBotVictories, decepticonVictories: decepticonVictories, worldEnd: false, winningTeam : survivingDecepticons, losingTeam : survivingAutobots);
+        }
+     
     }
 
     func determineWinner(robotA : Transformer, robotB : Transformer) -> Transformer?{

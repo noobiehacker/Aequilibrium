@@ -20,20 +20,46 @@ class UIHelper{
         let name = readLine()!
         print("you just entered " + name + " As Your TransformerName")
         //2)Prompt For Transformer Team Name
-        print("Please Enter Team Type Autobots/Decepticon (A/D)")
-        let teamName = readLine()!
-        print("you just enetered " + teamName + " As your team name")
-        //3)Prompt For Transformer's stat
         var transformer = Transformer.init(name: name)
+        let teamName = promptForTeamNames()
+        transformer.machineType = getMachineTypeFromTeamName(teamName: teamName)
+        //3)Prompt For Transformer's stat
         transformer.strength = promptForValues(value: "Strength")
-        transformer.skill = promptForValues(value: "Skill")
-        transformer.courage = promptForValues(value: "Courage")
         transformer.intelligence = promptForValues(value: "Intelligence")
         transformer.speed = promptForValues(value: "Speed")
         transformer.endurance = promptForValues(value: "Endurance")
         transformer.rank = promptForValues(value: "Rank")
+        transformer.courage = promptForValues(value: "Courage")
+        transformer.skill = promptForValues(value: "Skill")
         transformer.firepower = promptForValues(value: "FirePower")
         return transformer;
+    }
+    
+    func getMachineTypeFromTeamName(teamName : String) -> Transformer.type{
+        let result : Transformer.type?
+        if teamName == "Autobots"{
+            result = Transformer.type.Autobot
+        }else{
+            result = Transformer.type.Decepticon
+        }
+        return result!
+    }
+    func promptForTeamNames() -> String{
+        var teamName = ""
+        while(teamName == ""){
+            print("Please Enter Team Type Autobots/Decepticon (A/D)")
+            var userInput = readLine()!
+            if( userInput == "A" || userInput == "a"){
+                teamName = "Autobots"
+            }
+            else if( userInput == "D" || userInput == "d"){
+                teamName = "Decepticons"
+            }else{
+                print("Incorrect Input and please try again")
+            }
+        }
+        print("You Have Just enetered " + teamName + " As your team name")
+        return teamName
     }
     
     func promptForValues(value : String) -> Int{
@@ -42,7 +68,7 @@ class UIHelper{
         while(!correctValue){
             print("Please Enter a number (1-10) for Transformer's " + value + " value")
             result = readLine()!
-            print("You have just entered " + result + " As your" + value + "value")
+            print("You have just entered " + result + " As your " + value + " value")
             if(!isCorrectInput(value: result)){
                 print("Incorrect Input")
             }else{
