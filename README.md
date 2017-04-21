@@ -14,4 +14,4 @@ https://vimeo.com/214248492
 
 3)Run TransformerCompany_test to validate program statisfy question Two constraint
 
-3i)Build program to excute a CML program to prompt a user to enter input for question two
+3i)Build program to excute a command line program to prompt a user to enter input for question Two
